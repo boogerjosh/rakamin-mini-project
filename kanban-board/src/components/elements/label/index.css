@@ -1,0 +1,20 @@
+.label-container {
+    align-items: center;
+    margin: 0;
+    width: 88px;
+    height: 24px;
+    border: 1px solid #4DB5BC;
+    border-radius: 4px;
+    padding: 2px 8px;
+    display: inline-flex;
+    justify-content: center;
+}
+p {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: #01959F;
+    text-align: center;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+}

@@ -1,0 +1,26 @@
+.input-text {
+   margin-bottom: 25px; 
+}
+.label {
+    color: #404040;
+    display: flex;
+    align-items: center;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    margin-bottom: 16px;
+}
+.form-control-custom {
+    border-radius: 10px;
+    border: 2px solid #EDEDED;
+    padding: 8px 16px;
+}
+.form-control-custom::placeholder {
+    color: #404040;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 20px;
+    opacity: 0.5;
+  }

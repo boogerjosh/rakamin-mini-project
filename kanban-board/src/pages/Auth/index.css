@@ -1,0 +1,33 @@
+.login-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 600px;
+    border-radius: 30px;
+    background-color: #FFF3BF;
+    padding: 20px;
+}
+.text-center {
+    font-size: 30px;
+    line-height: 44px;
+    color: #373d39;
+    margin-bottom: 16px;
+    margin-top: 0px !important;
+}
+.login-input {
+    width: 383px;
+    height: 36px;
+}
+.btn-login {
+    width: 86px;
+    height: 32px;
+    background: #01959F;
+}

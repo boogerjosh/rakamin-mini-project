@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from 'react';
+import { Provider } from 'react-redux';
+import { Routes, Route, BrowserRouter } from 'react-router-dom';
+import ProtectedRoute from './middlewares/ProtectedRoute';
+import store from './store/configureStore';
+import Login from './pages/Auth/Login';
+import MainPages from './pages/MainPage/MainPages';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+    return (
+      <Provider store={store}>
+        <BrowserRouter>
+          <Routes>
+            <Route element={<ProtectedRoute />}>
+              <Route path="/home" element={<MainPages />} exact/>
+            </Route>
+            <Route path="/login" element={<Login />}></Route>
+          </Routes>
+        </BrowserRouter>
+      </Provider>
+    );
 }
 
 export default App;
