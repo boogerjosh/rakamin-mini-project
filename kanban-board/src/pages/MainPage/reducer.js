@@ -1,9 +1,8 @@
 import { TODOS_LISTS } from './constants';
 
 const initialState = {
-    token: {
-      lists: [],
-    }
+    errorMessage: '',
+    lists: [],   
   };
 
   export default function reducer(state = initialState, action) {
@@ -11,6 +10,7 @@ const initialState = {
     case TODOS_LISTS:
         return {
             ...state,
+            errorMessage: action.errorMessage,
             lists: action.lists
         };
       default:

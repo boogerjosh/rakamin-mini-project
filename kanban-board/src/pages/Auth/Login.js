@@ -37,7 +37,7 @@ const Login = () => {
           >
           </InputText>
           <InputText
-            inputClassName={'login-input'}
+            inputClassName='login-input'
             label="Password"
             name="password"
             placeholder="Type ur password"

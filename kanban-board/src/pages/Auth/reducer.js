@@ -2,9 +2,7 @@ import { LOGIN } from './constants';
 
 const initialState = {
     errorMessage: '',
-    token: {
-      token: '',
-    }
+    token: '',
   };
 
   export default function reducer(state = initialState, action) {

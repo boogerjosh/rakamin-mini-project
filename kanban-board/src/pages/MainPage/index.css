@@ -1,18 +1,20 @@
 .main-page {
+  min-height: 100vh;
+  padding: 24px;
+}
+.cointainer-tasks {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
-  width: 100%;
-  padding-left: 24px;
-  padding-top: 24px;
-  padding-right: 24px;
+  gap: 16px;
 }
 .card-container {
   gap: 8px;
   padding: 16px;
   display: flex;
+  width: 326px;
   flex-direction: column;
   background: #F7FEFF;
-  width: 326px;
 }
 .month-schedule-text {
   font-style: normal;
@@ -51,6 +53,7 @@
   cursor: pointer;
 }
 .text-plus-circle {
+  margin-bottom: 3px;
   text-align: center;
   font-style: normal;
   font-weight: 400;
@@ -63,4 +66,10 @@
   font-weight: 400;
   font-size: 12px;
   color: #1D1F20;
+}
+.block {
+  display: block;
+}
+.hidden {
+  display: none;
 }
