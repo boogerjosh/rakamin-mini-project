@@ -13,9 +13,9 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route element={<ProtectedRoute />}>
-              <Route path="/" element={<MainPages />} exact/>
+              <Route path="/v1" element={<MainPages />} exact/>
             </Route>
-            <Route path="/login" element={<Login />}></Route>
+            <Route path="/v1/login" element={<Login />}></Route>
           </Routes>
         </BrowserRouter>
       </Provider>
