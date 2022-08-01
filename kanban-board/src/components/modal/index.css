@@ -40,12 +40,10 @@
   cursor: pointer;
 }
 .login-input {
-  width: 372px;
-  height: 36px;
+  height: 23px;
 }
 .login-input-2 {
-  width: 143px;
-  height: 36px;
+  height: 23px;
 }
 .modalContainer .body {
   flex: 50%;

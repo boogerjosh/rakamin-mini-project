@@ -3,7 +3,7 @@ import './index.css';
 import InputText from "../input/InputText";
 import Button from '../elements/button/Button';
 
-function Modal({ setOpenModal }) {
+function Modal({ setOpenModal, title }) {
   const [form, setForm] = useState({
     taskName: '',
     progress: ''
@@ -18,7 +18,7 @@ function Modal({ setOpenModal }) {
       <div className="modalContainer">
         <div className="modal-title">
           <div className="title">
-              Create Task
+              {title}
           </div>
           <div className="titleCloseBtn">
               <button

@@ -6,7 +6,7 @@
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  gap: 16px;
+  gap: 20px;
 }
 .card-container {
   gap: 8px;
@@ -22,19 +22,6 @@
   margin: 0px;
   font-size: 12px;
   color: #404040;
-}
-.task-column {
-  background: #FAFAFA;
-  border: 1px solid #E0E0E0;
-  border-radius: 4px;
-  padding: 8px 16px;
-}
-.task-text {
-  text-align: start;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  color: #757575;
 }
 .new-task-button {
   display: flex;

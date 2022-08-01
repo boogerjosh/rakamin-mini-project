@@ -1,1 +1,2 @@
 export const TODOS_LISTS = 'TODOS_LISTS';
+export const TODOS_LISTS_BYID = 'TODOS_LIST_BYID';
