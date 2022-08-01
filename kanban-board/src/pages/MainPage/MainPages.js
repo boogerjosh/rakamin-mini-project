@@ -3,8 +3,8 @@ import './index.css';
 import { useDispatch, useSelector } from 'react-redux';
 // import { useGetLists } from './action';
 import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
-import { fetchTodos } from './action';
 import DragDropComp from './DragDropComp';
+import { fetchTodos } from './action';
 
 const MainPages = () => {
   const {
@@ -14,12 +14,11 @@ const MainPages = () => {
 
   useEffect(() => {
     dispatch(fetchTodos());
-  }, [dispatch]);
+  }, []);
 
   return (
     <div className='main-page'>
       {lists ? <DragDropComp lists={lists} /> : <div>nothing</div>}
-
     </div>
   );
 };

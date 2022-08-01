@@ -11,17 +11,26 @@ export const fetchTodos = () => {
                 headers: { Authorization: AuthStr }
              })
              .then((response) => {
-              response.data.map(async (res) => {
-                let result = await axios.get(`https://todos-project-api.herokuapp.com/todos/${res.id}/items`, {
+
+              let newData = response.data.map((res) => {
+
+                let result = axios.get(`https://todos-project-api.herokuapp.com/todos/${res.id}/items`, {
                   headers: { Authorization: AuthStr }
                 });
-                res['items'] = result.data;
+
+                Promise.all([result]).then(function(values) {
+                  res['items'] = values[0].data;
+                });
+
                 return res;
               });
-              dispatch({ errorMessage: '', lists: response.data, type: TODOS_LISTS })
+
+              Promise.all([newData]).then(function(val) {
+                dispatch({ errorMessage: '', lists: val, type: TODOS_LISTS });
+              });
+              
              })
-            .catch((error) => console.log(error))
-            // .finally(() => dispatch(fetchLoading(false)));
+            .catch((error) => console.log(error));
   }
 }
 
