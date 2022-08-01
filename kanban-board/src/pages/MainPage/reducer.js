@@ -2,8 +2,8 @@ import { TODOS_LISTS, TODOS_LISTS_BYID } from './constants';
 
 const initialState = {
     errorMessage: '',
-    lists: [],
-    listById: [],   
+    boardDatas: [],
+    cardDatas: [],   
   };
 
   export default function reducer(state = initialState, action) {
@@ -12,13 +12,13 @@ const initialState = {
         return {
             ...state,
             errorMessage: action.errorMessage,
-            lists: action.lists
+            boardDatas: action.boardDatas
         };
     case TODOS_LISTS_BYID:
         return {
             ...state,
             errorMessage: action.errorMessage,
-            listById: action.listById
+            cardDatas: action.cardDatas
         };  
       default:
         return state;

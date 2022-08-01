@@ -11,22 +11,22 @@ export const fetchTodos = () => {
                 headers: { Authorization: AuthStr }
              })
              .then((response) => {
-
-              let newData = response.data.map((res) => {
-
-                let result = axios.get(`https://todos-project-api.herokuapp.com/todos/${res.id}/items`, {
+              const promises = response.data.map((res) => {
+                const result = axios.get(`https://todos-project-api.herokuapp.com/todos/${res.id}/items`, {
                   headers: { Authorization: AuthStr }
                 });
 
-                Promise.all([result]).then(function(values) {
-                  res['items'] = values[0].data;
+                Promise.all([result]).then(function(val) {
+                  res.items = val[0].data;
                 });
 
                 return res;
               });
 
-              Promise.all([newData]).then(function(val) {
-                dispatch({ errorMessage: '', lists: val, type: TODOS_LISTS });
+              // console.log(promises);
+
+              Promise.all([promises]).then(function(val) {
+                dispatch({ errorMessage: '', boardDatas: val, type: TODOS_LISTS });
               });
               
              })
@@ -41,7 +41,7 @@ export const fetchTodoById = (payload) => {
                 headers: { Authorization: AuthStr }
              })
              .then((response) => {
-              dispatch({ errorMessage: '', listById: response.data, type: TODOS_LISTS_BYID });
+              dispatch({ errorMessage: '', cardDatas: response.data, type: TODOS_LISTS_BYID });
               return response;
              })
             .catch((error) => console.log(error))

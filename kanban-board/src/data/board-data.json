@@ -1,0 +1,250 @@
+[
+    {
+      "id": 1,
+      "title": "Group Task 1",
+      "created_by": "1",
+      "created_at": "2021-04-20T23:47:50.046Z",
+      "updated_at": "2021-04-21T04:39:06.785Z",
+      "description": "January - March",
+      "items": [
+        {
+          "id": 1317,
+          "name": "new Item 2",
+          "done": null,
+          "todo_id": 1,
+          "created_at": "2021-05-29T14:03:57.467Z",
+          "updated_at": "2021-05-29T14:03:57.467Z",
+          "progress_percentage": 70.0
+        },
+        {
+          "id": 1321,
+          "name": "Redesign page part 2",
+          "done": null,
+          "todo_id": 1,
+          "created_at": "2021-07-12T14:45:43.256Z",
+          "updated_at": "2021-07-12T14:45:43.256Z",
+          "progress_percentage": 60.0
+        },
+        {
+          "id": 1322,
+          "name": "Redesign page part 2",
+          "done": null,
+          "todo_id": 1,
+          "created_at": "2021-07-12T14:57:08.047Z",
+          "updated_at": "2021-07-12T14:57:08.047Z",
+          "progress_percentage": 60.0
+        },
+        {
+          "id": 1323,
+          "name": "Redesign page part 2",
+          "done": null,
+          "todo_id": 1,
+          "created_at": "2021-07-12T14:57:08.215Z",
+          "updated_at": "2021-07-12T14:57:08.215Z",
+          "progress_percentage": 60.0
+        },
+        {
+          "id": 1324,
+          "name": "Redesign page part 2",
+          "done": null,
+          "todo_id": 1,
+          "created_at": "2021-07-12T14:57:18.352Z",
+          "updated_at": "2021-07-12T14:57:18.352Z",
+          "progress_percentage": 60.0
+        },
+        {
+          "id": 1325,
+          "name": "Redesign page part 2",
+          "done": null,
+          "todo_id": 1,
+          "created_at": "2021-07-12T14:59:11.496Z",
+          "updated_at": "2021-07-12T14:59:11.496Z",
+          "progress_percentage": 60.0
+        },
+        {
+          "id": 1326,
+          "name": "Redesign page part 2",
+          "done": null,
+          "todo_id": 1,
+          "created_at": "2021-07-12T14:59:32.684Z",
+          "updated_at": "2021-07-12T14:59:32.684Z",
+          "progress_percentage": 60.0
+        },
+        {
+          "id": 1327,
+          "name": "Redesign page part 2",
+          "done": null,
+          "todo_id": 1,
+          "created_at": "2021-07-12T15:02:24.090Z",
+          "updated_at": "2021-07-12T15:02:24.090Z",
+          "progress_percentage": 60.0
+        },
+        {
+          "id": 1328,
+          "name": "Redesign page part 2",
+          "done": null,
+          "todo_id": 1,
+          "created_at": "2021-07-12T15:02:45.161Z",
+          "updated_at": "2021-07-12T15:02:45.161Z",
+          "progress_percentage": 60.0
+        },
+        {
+          "id": 1329,
+          "name": "Redesign page part 2",
+          "done": null,
+          "todo_id": 1,
+          "created_at": "2021-07-12T15:03:28.004Z",
+          "updated_at": "2021-07-12T15:03:28.004Z",
+          "progress_percentage": 60.0
+        },
+        {
+          "id": 1335,
+          "name": "Redesign page part 2",
+          "done": null,
+          "todo_id": 1,
+          "created_at": "2022-07-20T08:43:34.606Z",
+          "updated_at": "2022-07-20T08:43:34.606Z",
+          "progress_percentage": 60.0
+        },
+        {
+          "id": 1336,
+          "name": "List Item 1",
+          "done": null,
+          "todo_id": 1,
+          "created_at": "2022-07-21T22:46:39.902Z",
+          "updated_at": "2022-07-21T22:46:39.902Z",
+          "progress_percentage": 40.0
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Group Task 2",
+      "created_by": "1",
+      "created_at": "2021-04-21T00:04:23.906Z",
+      "updated_at": "2021-05-05T15:32:10.035Z",
+      "description": "April - June",
+      "items": [
+        {
+          "id": 1319,
+          "name": "new Item 4",
+          "done": null,
+          "todo_id": 2,
+          "created_at": "2021-05-29T14:04:14.720Z",
+          "updated_at": "2021-05-29T14:04:14.720Z",
+          "progress_percentage": 90.0
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Group Task 3",
+      "created_by": "1",
+      "created_at": "2021-04-21T00:40:08.724Z",
+      "updated_at": "2021-05-05T15:34:31.805Z",
+      "description": "July - September",
+      "items": [
+        {
+          "id": 1200,
+          "name": "Priority One",
+          "done": null,
+          "todo_id": 3,
+          "created_at": "2021-05-09T06:19:04.351Z",
+          "updated_at": "2021-05-11T03:21:42.511Z",
+          "progress_percentage": 80.0
+        },
+        {
+          "id": 1300,
+          "name": "Test after deployment",
+          "done": null,
+          "todo_id": 3,
+          "created_at": "2021-05-18T06:00:47.152Z",
+          "updated_at": "2021-05-23T15:10:26.978Z",
+          "progress_percentage": 100.0
+        },
+        {
+          "id": 1314,
+          "name": "Build rocket",
+          "done": null,
+          "todo_id": 3,
+          "created_at": "2021-05-24T12:44:57.072Z",
+          "updated_at": "2021-05-24T12:44:57.072Z",
+          "progress_percentage": 100.0
+        }
+      ]
+    },
+    {
+      "id": 82,
+      "title": "Group Task 4",
+      "created_by": "1",
+      "created_at": "2021-05-08T15:24:32.607Z",
+      "updated_at": "2021-05-08T15:24:32.607Z",
+      "description": "October - Desember",
+      "items": [
+        {
+          "id": 1227,
+          "name": "Redesign page part 2",
+          "done": null,
+          "todo_id": 82,
+          "created_at": "2021-05-10T16:10:40.525Z",
+          "updated_at": "2021-05-11T04:31:16.100Z",
+          "progress_percentage": 60.0
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Group Task 4",
+      "created_by": "1",
+      "created_at": "2021-04-21T08:39:29.791Z",
+      "updated_at": "2021-05-05T15:35:31.672Z",
+      "description": "October - Desember",
+      "items": []
+    },
+    {
+      "id": 65,
+      "title": "Group Task 2",
+      "created_by": "1",
+      "created_at": "2021-05-06T19:40:07.486Z",
+      "updated_at": "2021-05-06T19:40:07.486Z",
+      "description": "June - Desember",
+      "items": [
+        {
+          "id": 1232,
+          "name": "Test after deployment",
+          "done": null,
+          "todo_id": 65,
+          "created_at": "2021-05-11T03:38:25.345Z",
+          "updated_at": "2021-05-11T04:06:58.738Z",
+          "progress_percentage": 99.0
+        }
+      ]
+    },
+    {
+      "id": 66,
+      "title": "Group Task 2",
+      "created_by": "1",
+      "created_at": "2021-05-06T19:40:41.425Z",
+      "updated_at": "2021-05-06T19:40:41.425Z",
+      "description": "Februari-maret",
+      "items": []
+    },
+    {
+      "id": 88,
+      "title": "Group Task 1",
+      "created_by": "1",
+      "created_at": "2021-05-12T06:38:16.414Z",
+      "updated_at": "2021-05-12T06:38:16.414Z",
+      "description": "Jan - March",
+      "items": []
+    },
+    {
+      "id": 89,
+      "title": "Group Task 2",
+      "created_by": "1",
+      "created_at": "2021-05-12T06:38:55.204Z",
+      "updated_at": "2021-05-12T06:38:55.204Z",
+      "description": "Apr - June",
+      "items": []
+    }
+  ]
