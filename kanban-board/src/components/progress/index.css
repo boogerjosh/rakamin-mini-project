@@ -1,0 +1,11 @@
+.progress-count {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.completed {
+    color: #43936C;
+    width: 19px !important;
+    height: 19px !important;
+}
