@@ -1,61 +1,76 @@
 import React, { useEffect, useState } from 'react';
 import './index.css';
-import { useDispatch, useSelector } from 'react-redux';
-// import { useGetLists } from './action';
+import { useSelector } from 'react-redux';
+import { useGetLists } from './action';
 import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
-// import DragDropComp from './DragDropComp';
-import { fetchTodos } from './action';
 import Label from '../../components/elements/label/Label';
 import Modal from '../../components/modal/Modal';
-import axios from 'axios';
-import BoardData from "../../data/board-data.json";
 import Progress from '../../components/progress/Progress';
+import { useMoveItem } from '../../components/dialogMenu/action';
 
 const MainPages = () => {
+  const { getListTodos } = useGetLists();
+  const { moveItem } = useMoveItem();
   const [ready, setReady] = useState(false);
   const {
     mainPage: { boardDatas } 
   } = useSelector((state) => state);
-  // const dispatch = useDispatch();
-  const [boardData, setBoardData] = useState(BoardData);
+  const [boardData, setBoardData] = useState(boardDatas);
   const [btnTitle, setModalTitle] = useState('');
   const [modalOpen, setModalOpen] = useState(false);
+  const [id, setId] = useState(null);
+  const [todo_id, setTodoId] = useState(null);
+  const [idx, setIndex] = useState(false);
+  const [taskName, setTaskName] = useState('');
+  const [progressVal, setProgressVal] = useState('');
 
   useEffect(() => {
-    // dispatch(fetchTodos());
+    getListTodos();
     setReady(true);
   }, []);
 
-  const onDragEnd = (re) => {
+  const onDragEnd = async (re) => {
+    console.log(re);
     if (!re.destination) return;
-    let newBoardData = boardData;
+    let newBoardData = boardDatas;
     var dragItem =
       newBoardData[parseInt(re.source.droppableId)].items[re.source.index];
     newBoardData[parseInt(re.source.droppableId)].items.splice(
       re.source.index,
       1
     );
+    console.log(dragItem);
+    let start = 0, end = boardDatas.length;
+    let targettodoId = null;
+    while (start < end) {
+      if (boardDatas[start].id == dragItem.todo_id) {
+        targettodoId = boardDatas[parseInt(re.destination.droppableId)].id;
+        break;
+      }
+      start++;
+    }
     newBoardData[parseInt(re.destination.droppableId)].items.splice(
       re.destination.index,
       0,
       dragItem
     );
-    setBoardData(newBoardData);
+    await moveItem({name: dragItem.name, targettodoId, id: dragItem.id, todo_id: dragItem.todo_id});
+    getListTodos();
   };
 
-  const _newtask = () => {
+  const _newtask = (id) => {
+    setId(id);
     setModalOpen(true);
-    setModalTitle('Create Task')
+    setModalTitle('Create Task');
   };
 
   return (
     <div className='main-page'>
-      {/* Board columns */}
       { ready && (
         <DragDropContext onDragEnd={onDragEnd}>
-          {modalOpen && <Modal setOpenModal={setModalOpen} title={btnTitle} />}
+          {modalOpen && <Modal setOpenModal={setModalOpen} id={id} title={btnTitle} name={taskName} progressVal={progressVal} todo_id={todo_id} />}
           <div className='cointainer-tasks'>
-            {BoardData?.map((board, bIndex) => {
+            {boardDatas?.map((board, bIndex) => {
               return (
                 <div key={bIndex} className='card-grid'>
                   <Droppable droppableId={bIndex.toString()}>
@@ -77,6 +92,16 @@ const MainPages = () => {
                                     index={iIndex}
                                     key={item.id}
                                     item={item} 
+                                    id={item.id}
+                                    todo_id={item.todo_id}
+                                    idx={idx}
+                                    setIndex={setIndex}
+                                    setModalOpen={setModalOpen}
+                                    setProgressVal={setProgressVal}
+                                    setTaskName={setTaskName}
+                                    setId={setId}
+                                    setModalTitle={setModalTitle}
+                                    setTodoId={setTodoId}
                                   />
                                 );
                             }) : <div className='card-item-empty'>
@@ -85,7 +110,7 @@ const MainPages = () => {
                           {provided.placeholder}
                           </div>
                           <div className='new-task-button'>
-                            <div className='plus-circle' onClick={() => {_newtask()}}>
+                            <div className='plus-circle' onClick={() => {_newtask(board.id)}}>
                               <span className='text-plus-circle'>+</span>
                             </div>
                             <p className='button-text'>New Task</p>

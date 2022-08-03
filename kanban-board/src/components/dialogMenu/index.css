@@ -1,0 +1,38 @@
+.menu-dialog {
+    width: 320px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+    z-index: 10;
+    padding: 14px 19px;
+    gap: 12px;
+}
+.content {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 22px;
+    justify-content: center;
+    align-items: center;
+}
+.content-text {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.2px;
+    color: #333333;
+}
+.icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.content-icon {
+    font-size: 18px !important;
+    text-align: center !important;
+}

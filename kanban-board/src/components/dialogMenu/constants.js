@@ -1,0 +1,2 @@
+export const MOVERIGHTITEM = 'MOVERIGHTITEM';
+export const MOVELEFTITEM = 'MOVELEFTITEM';

@@ -76,22 +76,22 @@
   color: #757575;
 }
 .horizontal-dots {
+  position: relative;
   display: flex;
   flex-direction: flex-end;
+  align-items: center;
+  justify-content: center;
   margin: auto;
+  width: 30px;
+  height: 20px;
 }
 .horizontal-dots div {
   margin: auto 0;
 }
-/* .horizontal-dots:hover {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.horizontal-dots:hover {
   background: #EDEDED;
   border-radius: 4px;
-  width: 24px;
-  height: 24px;
-} */
+}
 .horizontal-dots span {
   text-align: center;
   width: 2px;
@@ -131,7 +131,6 @@
   background: transparent;
   border: 1px solid #333333;
   border-radius: 50%;
-  cursor: pointer;
 }
 .text-plus-circle {
   margin-bottom: 3px;

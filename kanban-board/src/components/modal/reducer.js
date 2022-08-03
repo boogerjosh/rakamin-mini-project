@@ -1,25 +1,24 @@
-import { TODOS_LISTS, TODOS_LISTS_BYID } from './constants';
+import { ADDITEM, EDITITEM } from "./constants";
 
 const initialState = {
     errorMessage: '',
-    boardDatas: null,
-    cardDatas: [],   
+    newItem: null
   };
 
   export default function reducer(state = initialState, action) {
     switch (action.type) {
-    case TODOS_LISTS:
+    case ADDITEM :
         return {
             ...state,
             errorMessage: action.errorMessage,
-            boardDatas: action.boardDatas
+            newItem: action.newItem
         };
-    case TODOS_LISTS_BYID:
+    case EDITITEM :
         return {
             ...state,
             errorMessage: action.errorMessage,
-            cardDatas: action.cardDatas
-        };  
+            newItem: action.newItem
+        };
       default:
         return state;
     }

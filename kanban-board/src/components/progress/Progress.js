@@ -1,12 +1,14 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Draggable } from "react-beautiful-dnd";
-import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import './index.css'
 import ProgressPercentage from './ProgressPercentage';
 import HorizontalDots from './HorizontalDots';
 
-function Progress({ item, index }) {
+function Progress({ 
+  item, index, id, idx, 
+  setIndex, todo_id, setModalOpen, 
+  setModalTitle, setProgressVal, 
+  setTaskName, setId, setTodoId }) {
   
   return (
     <Draggable index={index} draggableId={item.id.toString()}>
@@ -23,7 +25,20 @@ function Progress({ item, index }) {
                 <ProgressPercentage
                   progress_percentage={item.progress_percentage}
                 />
-                <HorizontalDots />
+                <HorizontalDots 
+                  id={id} 
+                  idx={idx} 
+                  setIndex={setIndex} 
+                  todo_id={todo_id} 
+                  setModalOpen={setModalOpen} 
+                  setModalTitle={setModalTitle} 
+                  name={item.name} 
+                  percentageVal={item.progress_percentage} 
+                  setProgressVal={setProgressVal} 
+                  setTaskName={setTaskName}
+                  setId={setId}
+                  setTodoId={setTodoId}
+                />
               </div>
           </div>
         )}

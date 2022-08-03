@@ -6,6 +6,7 @@
   justify-content: center;
   align-items: center;
   background: transparent;
+  z-index: 15;
 }
 .modalContainer {
   position: relative;
@@ -15,19 +16,47 @@
   border-radius: 10px;
   display: flex;
   flex-direction: column;
+  gap: 16px;
   padding: 24px;
 }
 .modal-title {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin-bottom: 24px;
 }
 .title {
   font-style: normal;
   font-weight: 700;
   font-size: 20px;
   color: #1D1F20;
+}
+.titleDelete {
+  display: flex;
+  flex-direction: row;
+}
+.delete-text {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  color: #1D1F20;
+}
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.body-delete-text {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #404040;
+  text-align: start;
+}
+.icon-delete {
+  color: #E11428;
+  font-size: 22px !important;
+  margin-right: 11.07px;
 }
 .modalContainer .title {
   display: inline-block;
@@ -66,5 +95,9 @@
 }
 .btn-save {
   background: #01959F;
+  color: #FFFFFF;
+}
+.btn-delete {
+  background: #E11428;
   color: #FFFFFF;
 }
