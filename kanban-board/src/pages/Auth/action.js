@@ -17,7 +17,7 @@ export function useAuthorization() {
             navigate('/');
         }
       } catch (error) {
-        dispatch({ errorMessage: error.response ? error.response.data.msg[0] : 'Failed login', type: LOGIN });
+        console.log(error);
       }
     },
   };
