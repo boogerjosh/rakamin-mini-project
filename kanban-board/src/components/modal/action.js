@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
 import axios from 'axios';
-import { ADDITEM, EDITITEM } from './constants';
+import { ADDITEM, EDITITEM, ADDTODO } from './constants';
 
 export function useAddItem() {
   const dispatch = useDispatch();
@@ -9,8 +9,8 @@ export function useAddItem() {
       try {
         const AuthStr = 'Bearer '.concat(localStorage.getItem('token'));
         const responseAddById = await axios.post(`https://todos-project-api.herokuapp.com/todos/${payload.id}/items`, {
-            "name": payload.form.taskName,
-            "progress_percentage": parseInt(payload.form.progress)
+            "name": payload.form.input1,
+            "progress_percentage": parseInt(payload.form.input2)
         }, {
             headers: { Authorization: AuthStr }
         });
@@ -24,8 +24,8 @@ export function useAddItem() {
         const AuthStr = 'Bearer '.concat(localStorage.getItem('token'));
         const responseEditById = await axios.put(`https://todos-project-api.herokuapp.com/todos/${payload.todo_id}/items/${payload.id}`, {
             "target_todo_id": payload.todo_id,
-            "name": payload.form.taskName,
-            "progress_percentage": parseInt(payload.form.progress)
+            "name": payload.form.input1,
+            "progress_percentage": parseInt(payload.form.input2)
         }, {
             headers: { Authorization: AuthStr }
         });
@@ -43,6 +43,20 @@ export function useAddItem() {
       } catch (err) {
         console.error(err);
       }
-    }
+    },
+    addTodo: async (payload) => {
+      try {
+        const AuthStr = 'Bearer '.concat(localStorage.getItem('token'));
+        const responseAddTodo = await axios.post(`https://todos-project-api.herokuapp.com/todos`, {
+            "title": payload.form.input1,
+            "description": payload.form.input2
+        }, {
+            headers: { Authorization: AuthStr }
+        });
+        dispatch({ errorMessage: '', newItem: responseAddTodo.data, type: ADDTODO });
+      } catch (err) {
+        console.error(err);
+      }
+    },
   };
 }

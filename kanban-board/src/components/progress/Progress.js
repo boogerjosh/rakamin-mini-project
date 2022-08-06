@@ -8,7 +8,7 @@ function Progress({
   item, index, id, idx, 
   setIndex, todo_id, setModalOpen, 
   setModalTitle, setProgressVal, 
-  setTaskName, setId, setTodoId }) {
+  setTaskName, setId, setTodoId, bIndex }) {
   
   return (
     <Draggable index={index} draggableId={item.id.toString()}>
@@ -25,7 +25,8 @@ function Progress({
                 <ProgressPercentage
                   progress_percentage={item.progress_percentage}
                 />
-                <HorizontalDots 
+                <HorizontalDots
+                  bIndex={bIndex} 
                   id={id} 
                   idx={idx} 
                   setIndex={setIndex} 

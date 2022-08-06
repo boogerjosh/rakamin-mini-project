@@ -8,12 +8,19 @@ import { useMoveItem } from './action';
 import { useGetLists } from '../../pages/MainPage/action';
 import { useSelector } from 'react-redux';
 
-function DialogMenu({id, todo_id, setModalOpen, setModalTitle, setProgressVal, setTaskName, name, percentageVal, setId, setTodoId, setIndex}) {
+function DialogMenu({id, todo_id, setModalOpen, setModalTitle, 
+  setProgressVal, setTaskName, name, percentageVal, 
+  setId, setTodoId, setIndex, bIndex}) {
   const { moveItem } = useMoveItem();
   const { getListTodos } = useGetLists();
   const {
     mainPage: { boardDatas } 
   } = useSelector((state) => state);
+  const [formLabel, setLabelForm] = useState({
+    label1: '',
+    label2: ''
+  })
+
   const editItem = () => {
     setIndex(false);
     setTodoId(todo_id);
@@ -61,15 +68,15 @@ function DialogMenu({id, todo_id, setModalOpen, setModalTitle, setProgressVal, s
 
   return (
       <div className='menu-dialog'>
-          <div className='content' onClick={() => {
+        {(bIndex < boardDatas.length - 1 && <div className='content' onClick={() => {
           moveRightItem();
         }}>
             <div className='icon'>
               <ArrowForwardIcon className='content-icon'/>
             </div>
             <p className='content-text'>Move Right</p>
-          </div>
-          { todo_id > 1 && <div className='content' onClick={() => {
+          </div>)}
+          { bIndex > 0 && <div className='content' onClick={() => {
           moveLeftItem();
         }}>
             <div className='icon'>
@@ -85,7 +92,7 @@ function DialogMenu({id, todo_id, setModalOpen, setModalTitle, setProgressVal, s
             </div>
             <p className='content-text'>Edit</p>
           </div>
-          <div className='content' onClick={() => {
+          <div className='content-delete' onClick={() => {
           deleteItem();
         }}>
             <div className='icon'>

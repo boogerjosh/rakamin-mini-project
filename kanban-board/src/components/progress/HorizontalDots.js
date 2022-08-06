@@ -6,7 +6,7 @@ function HorizontalDots({
   id, idx, setIndex, 
   todo_id, setModalOpen, setModalTitle, 
   setProgressVal, setTaskName, 
-  name, percentageVal, setId, setTodoId}) {
+  name, percentageVal, setId, setTodoId, bIndex}) {
   const handleSetIndex = (id) => {
     if (idx === id) setIndex(false);
     else idx !== id && setIndex(id);
@@ -23,6 +23,7 @@ function HorizontalDots({
       {/* <DialogMenu /> */}
       {idx === id && (
         <DialogMenu 
+          bIndex={bIndex}
           id={id} 
           todo_id={todo_id} 
           setModalOpen={setModalOpen} 

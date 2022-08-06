@@ -1,4 +1,4 @@
-import { ADDITEM, EDITITEM } from "./constants";
+import { ADDITEM, EDITITEM, ADDTODO } from "./constants";
 
 const initialState = {
     errorMessage: '',
@@ -14,6 +14,12 @@ const initialState = {
             newItem: action.newItem
         };
     case EDITITEM :
+        return {
+            ...state,
+            errorMessage: action.errorMessage,
+            newItem: action.newItem
+        };
+    case ADDTODO :
         return {
             ...state,
             errorMessage: action.errorMessage,

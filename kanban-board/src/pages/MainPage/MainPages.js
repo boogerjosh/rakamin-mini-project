@@ -7,6 +7,9 @@ import Label from '../../components/elements/label/Label';
 import Modal from '../../components/modal/Modal';
 import Progress from '../../components/progress/Progress';
 import { useMoveItem } from '../../components/dialogMenu/action';
+import Button from '../../components/elements/button/Button';
+import LazyLoad from 'react-lazyload';
+import AddIcon from '@mui/icons-material/Add';
 
 const MainPages = () => {
   const { getListTodos } = useGetLists();
@@ -15,7 +18,6 @@ const MainPages = () => {
   const {
     mainPage: { boardDatas } 
   } = useSelector((state) => state);
-  const [boardData, setBoardData] = useState(boardDatas);
   const [btnTitle, setModalTitle] = useState('');
   const [modalOpen, setModalOpen] = useState(false);
   const [id, setId] = useState(null);
@@ -23,6 +25,14 @@ const MainPages = () => {
   const [idx, setIndex] = useState(false);
   const [taskName, setTaskName] = useState('');
   const [progressVal, setProgressVal] = useState('');
+  const [formLabel, setLabelForm] = useState({
+    label1: 'Task Name',
+    label2: 'Progress'
+  })
+  const [formPlaceHolder, setPlaceHolder] = useState({
+    placeHolder1: 'Type ur Task',
+    placeHolder2: '70%'
+  })
 
   useEffect(() => {
     getListTodos();
@@ -30,7 +40,6 @@ const MainPages = () => {
   }, []);
 
   const onDragEnd = async (re) => {
-    console.log(re);
     if (!re.destination) return;
     let newBoardData = boardDatas;
     var dragItem =
@@ -39,7 +48,6 @@ const MainPages = () => {
       re.source.index,
       1
     );
-    console.log(dragItem);
     let start = 0, end = boardDatas.length;
     let targettodoId = null;
     while (start < end) {
@@ -64,11 +72,25 @@ const MainPages = () => {
     setModalTitle('Create Task');
   };
 
+  const addGroup = () => {
+    setModalOpen(true);
+    setModalTitle('Create a Todo');
+    setLabelForm({ ...formLabel, label1: 'Title', label2: 'Description' });
+    setPlaceHolder({ ...formPlaceHolder, placeHolder1: 'Type ur Title', placeHolder2: 'Type ur Description' });
+  }
+
   return (
-    <div className='main-page'>
-      { ready && (
+  <div className='main-page'>
+    {modalOpen && <Modal setOpenModal={setModalOpen} id={id} title={btnTitle} 
+    name={taskName} progressVal={progressVal} todo_id={todo_id} formLabel={formLabel} 
+    setLabelForm={setLabelForm} formPlaceHolder={formPlaceHolder} setPlaceHolder={setPlaceHolder} />}
+    <div className='header'>
+        <p className='text-header'>Product Roadmap</p>
+        <Button text='Add New Group' className='btn-add-newgroup' onClick={() => {addGroup()}}/>
+    </div>
+    <div className='body'>
+      { ready ? (
         <DragDropContext onDragEnd={onDragEnd}>
-          {modalOpen && <Modal setOpenModal={setModalOpen} id={id} title={btnTitle} name={taskName} progressVal={progressVal} todo_id={todo_id} />}
           <div className='cointainer-tasks'>
             {boardDatas?.map((board, bIndex) => {
               return (
@@ -89,6 +111,7 @@ const MainPages = () => {
                               board.items.map((item, iIndex) => {
                                 return (
                                   <Progress
+                                    bIndex={bIndex}
                                     index={iIndex}
                                     key={item.id}
                                     item={item} 
@@ -111,9 +134,11 @@ const MainPages = () => {
                           </div>
                           <div className='new-task-button'>
                             <div className='plus-circle' onClick={() => {_newtask(board.id)}}>
-                              <span className='text-plus-circle'>+</span>
+                              <AddIcon className='text-plus-circle'/>
                             </div>
-                            <p className='button-text'>New Task</p>
+                            <div className='button-text'>
+                              <p>New Task</p>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -124,8 +149,9 @@ const MainPages = () => {
             })}
           </div>
         </DragDropContext>
-      )}
+      ) : (<LazyLoad height={200} />) }
     </div>
+  </div>
   );
 };
 

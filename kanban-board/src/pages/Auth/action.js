@@ -14,7 +14,7 @@ export function useAuthorization() {
         if (data) {
             dispatch({ errorMessage: '', token: data.data.auth_token, type: LOGIN });
             localStorage.setItem('token', data.data.auth_token);
-            navigate('/');
+            navigate('/v1');
         }
       } catch (error) {
         console.log(error);
