@@ -44,9 +44,9 @@
     font-style: normal;
     font-weight: 600;
     font-size: 16px;
-    line-height: 24px;
     letter-spacing: 0.2px;
     color: #333333;
+    margin: 0;
 }
 .icon {
     display: flex;

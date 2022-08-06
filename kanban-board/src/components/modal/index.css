@@ -33,12 +33,14 @@
 .titleDelete {
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
 .delete-text {
   font-style: normal;
   font-weight: 700;
   font-size: 20px;
   color: #1D1F20;
+  margin: 0;
 }
 .icon {
   display: flex;
@@ -49,9 +51,9 @@
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
-  line-height: 24px;
   color: #404040;
   text-align: start;
+  margin: 0;
 }
 .icon-delete {
   color: #E11428;

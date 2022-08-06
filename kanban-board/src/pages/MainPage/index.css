@@ -57,7 +57,7 @@
   font-style: normal;
   font-weight: 700;
   font-size: 14px;
-  line-height: 24px;
+  margin: 0;
 }
 .card-item-empty {
   padding: 16px;
@@ -70,8 +70,8 @@
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
-  line-height: 24px;
   color: #757575;
+  margin: 0;
 }
 .line-dashed {
   height: 0px;
